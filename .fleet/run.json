@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "type": "xcode-app",
+            "name": "sample.iosApp",
+            "workingDir": "$PROJECT_DIR$",
+            "buildTarget": {
+                "project": "iosApp",
+                "target": "iosApp"
+            },
+            "configuration": "Debug",
+            "destination": "iPhone 14 | iOS 17.0"
+        },
+        {
+            "type": "android-app",
+            "name": "sample.androidApp",
+            "workingDir": "$PROJECT_DIR$",
+            "allowParallelRun": true,
+            "module": "kmp-sample.sample.androidApp.main",
+            "destination": "Pixel 3a API 25"
+        },
+        {
+            "name": "ktlintCheck",
+            "type": "gradle",
+            "workingDir": "$PROJECT_DIR$",
+            "tasks": [
+                "ktlintCheck"
+            ]
+        },
+        {
+            "name": "ktlintFormat",
+            "type": "gradle",
+            "workingDir": "$PROJECT_DIR$",
+            "tasks": [
+                "ktlintFormat"
+            ]
+        }
+    ]
+}
