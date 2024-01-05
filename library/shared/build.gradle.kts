@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -12,6 +14,7 @@ kotlin {
         }
     }
 
+    val xcf = XCFramework()
     listOf(
         iosX64(),
         iosArm64(),
@@ -19,6 +22,7 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "shared"
+            xcf.add(this)
             isStatic = true
         }
     }
@@ -26,7 +30,6 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
-            implementation(projects.library.shared)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -35,7 +38,7 @@ kotlin {
 }
 
 android {
-    namespace = "tech.takenoko.android.kmp.sample"
+    namespace = "tech.takenoko.android.kmp.library"
     compileSdk = 34
     defaultConfig {
         minSdk = 24

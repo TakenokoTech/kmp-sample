@@ -1,9 +1,9 @@
 package tech.takenoko.android.kmp.sample
 
-class Greeting {
-    private val platform: Platform = getPlatform()
+import tech.takenoko.android.kmp.library.SharedGreeting
 
+class Greeting {
     fun greet(): String {
-        return "Hello, ${platform.name}!"
+        return SharedGreeting().greet()
     }
 }
