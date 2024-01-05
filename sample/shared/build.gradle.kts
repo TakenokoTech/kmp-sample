@@ -27,11 +27,15 @@ kotlin {
     }
 
     sourceSets {
+        androidMain.dependencies {
+            implementation(libs.compose.ui.tooling)
+            implementation(libs.androidx.activity.compose)
+        }
         commonMain.dependencies {
             implementation(projects.library.shared)
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
@@ -47,5 +51,14 @@ android {
     compileSdk = 34
     defaultConfig {
         minSdk = 24
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
+    dependencies {
+        debugImplementation(libs.compose.ui.tooling.preview)
     }
 }

@@ -17,7 +17,7 @@
             "workingDir": "$PROJECT_DIR$",
             "allowParallelRun": true,
             "module": "kmp-sample.sample.androidApp.main",
-            "destination": "Pixel 3a API 25"
+            "destination": "Pixel 5 API 31"
         },
         {
             "name": "ktlintCheck",

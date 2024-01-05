@@ -25,7 +25,6 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Column {
                         GreetingView(Greeting().greet())
-                        SampleCompose()
                     }
                 }
             }
@@ -35,7 +34,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun GreetingView(text: String) {
-    Text(text = text)
+    Column {
+        Text(text = text)
+        SampleCompose()
+    }
 }
 
 @Preview
