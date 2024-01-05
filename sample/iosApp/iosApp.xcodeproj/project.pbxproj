@@ -11,7 +11,7 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		D99E43E36B15026AF515E4A8 /* SampleComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E45E69E16593A6DE9AAFD /* SampleComposeViewController.swift */; };
+		D99E4A98DCD1735BCA28F210 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E417B97FC0117BB9375B8 /* ComposeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +34,7 @@
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D99E45E69E16593A6DE9AAFD /* SampleComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleComposeViewController.swift; path = viewcontroller/SampleComposeViewController.swift; sourceTree = "<group>"; };
+		D99E417B97FC0117BB9375B8 /* ComposeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeView.swift; path = viewcontroller/ComposeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +79,11 @@
 			isa = PBXGroup;
 			children = (
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
+				D99E417B97FC0117BB9375B8 /* ComposeView.swift */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
-				D99E45E69E16593A6DE9AAFD /* SampleComposeViewController.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -99,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D99E4435920F7FEA0DBC1921 /* xcschemes */,
+				D99E4A9E97BE81686E7C6CA2 /* xcdebugger */,
 			);
 			path = takenoko.xcuserdatad;
 			sourceTree = "<group>";
@@ -116,6 +117,13 @@
 			);
 			name = takenoko.xcuserdatad;
 			path = iosApp.xcodeproj/project.xcworkspace/xcuserdata/takenoko.xcuserdatad;
+			sourceTree = "<group>";
+		};
+		D99E4A9E97BE81686E7C6CA2 /* xcdebugger */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xcdebugger;
 			sourceTree = "<group>";
 		};
 		D99E4AF44A747DA2148543F1 /* xcuserdata */ = {
@@ -221,7 +229,7 @@
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
-				D99E43E36B15026AF515E4A8 /* SampleComposeViewController.swift in Sources */,
+				D99E4A98DCD1735BCA28F210 /* ComposeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

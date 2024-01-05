@@ -1,6 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="iosApp" type="KmmRunConfiguration" factoryName="iOS Application" singleton="false" CONFIG_VERSION="1" EXEC_TARGET_ID="8DD29B4F-5613-42CB-8789-7AC348D48848" XCODE_PROJECT="$PROJECT_DIR$/sample/iosApp/iosApp.xcodeproj" XCODE_CONFIGURATION="Debug" XCODE_SCHEME="iosApp">
     <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="ktlintCheck" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
       <option name="com.jetbrains.kmm.ios.BuildIOSAppTask" enabled="true" />
     </method>
   </configuration>
