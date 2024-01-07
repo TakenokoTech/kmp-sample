@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid).apply(false)
     alias(libs.plugins.kotlinMultiplatform).apply(false)
     alias(libs.plugins.ktlint).apply(false)
+    alias(libs.plugins.cklib).apply(false)
 }
 
 subprojects {
