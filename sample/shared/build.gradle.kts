@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsCompose)
+    alias(libs.plugins.cklib)
     id("maven-publish")
 }
 
@@ -28,11 +29,12 @@ kotlin {
 
         it.compilations.getByName("main") {
             val lib by cinterops.creating {
-                val dir = project.file("src/nativeInterop")
-                defFile(File(dir, "definitions.def"))
-                packageName("tech.takenoko.android.kmp.interop")
-                compilerOpts("-I$dir")
+                val dir = project.file("src/nativeInterop/cinterop")
                 includeDirs(dir)
+                headers(
+                    File(dir, "image.h"),
+                    File(dir, "logs.h"),
+                )
             }
         }
     }
@@ -77,12 +79,18 @@ android {
     compileSdk = 34
     defaultConfig {
         minSdk = 24
+        ndk {
+            abiFilters += listOf("x86", "x86_64", "armeabi-v7a", "arm64-v8a")
+        }
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
+    externalNativeBuild {
+        cmake.path = file("src/androidMain/CMakeLists.txt")
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling.preview)

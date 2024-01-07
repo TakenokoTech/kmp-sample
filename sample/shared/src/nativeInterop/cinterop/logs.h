@@ -1,3 +1,6 @@
+#ifndef KMP_SAMPLE_LOGS_H
+#define KMP_SAMPLE_LOGS_H
+
 #include <stdio.h>
 
 static void Log_debug(const char *text) {
@@ -15,3 +18,6 @@ static void Log_warn(const char *text) {
 static void Log_error(const char *text) {
     printf("Error: %s\n", text);
 }
+
+
+#endif //KMP_SAMPLE_LOGS_H
