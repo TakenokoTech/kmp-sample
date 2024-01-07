@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("maven-publish")
 }
 
 kotlin {
@@ -33,6 +34,21 @@ kotlin {
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+    }
+
+    publishing {
+        repositories {
+            maven {
+                url = uri("https://maven.pkg.github.com/TakenokoTech/kmp-sample")
+                group = "tech.takenoko.android.kmp.library"
+                name = "shared"
+                version = "1.0.0-SNAPSHOT"
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
+            }
         }
     }
 }
