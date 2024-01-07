@@ -36,15 +36,13 @@ fun KmpTheme(
                 background = Color(0xFFF6F6F6),
             )
         }
-    val typography =
-        Typography(
-            bodyMedium =
-                TextStyle(
-                    fontFamily = FontFamily.Default,
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 16.sp,
-                ),
-        )
+    val typography = Typography(
+        bodyMedium = TextStyle(
+            fontFamily = FontFamily.Default,
+            fontWeight = FontWeight.Normal,
+            fontSize = 16.sp,
+        ),
+    )
     val shapes =
         Shapes(
             small = RoundedCornerShape(4.dp),

@@ -1,6 +1,7 @@
 root = true
 
 [*.{kt,kts}]
+ktlint_code_style = intellij_idea
 insert_final_newline = true
 ktlint_function_naming_ignore_when_annotated_with = Composable
 ij_kotlin_allow_trailing_comma = true

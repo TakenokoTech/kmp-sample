@@ -24,6 +24,16 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
+
+        it.compilations.getByName("main") {
+            val lib by cinterops.creating {
+                val dir = project.file("src/nativeInterop")
+                defFile(File(dir, "definitions.def"))
+                packageName("tech.takenoko.android.kmp.interop")
+                compilerOpts("-I$dir")
+                includeDirs(dir)
+            }
+        }
     }
 
     sourceSets {
