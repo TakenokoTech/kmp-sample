@@ -3,7 +3,7 @@ package tech.takenoko.android.kmp.sample
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
-class GreetingTest {
+class IosGreetingTest {
     @Test
     fun testExample() {
         assertTrue(Greeting().greet().contains("iOS"), "Check iOS is mentioned")
