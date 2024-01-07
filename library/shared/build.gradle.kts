@@ -41,9 +41,9 @@ kotlin {
         repositories {
             maven {
                 url = uri("https://maven.pkg.github.com/TakenokoTech/kmp-sample")
-                // group = "tech.takenoko.android.kmp.library"
-                // name = "shared"
-                // version = "1.0.0-SNAPSHOT"
+                group = "tech.takenoko.android.kmp.library"
+                name = "shared"
+                version = "1.0.0-SNAPSHOT"
                 credentials {
                     username = System.getenv("GITHUB_ACTOR")
                     password = System.getenv("GITHUB_TOKEN")
