@@ -27,6 +27,7 @@ fun KmpTheme(
                 secondary = Color(0xFF00B0FF),
                 tertiary = Color(0xFF01579B),
                 background = Color(0xFF000000),
+                outline = Color(0xFFFF9100)
             )
         } else {
             lightColorScheme(
@@ -34,6 +35,7 @@ fun KmpTheme(
                 secondary = Color(0xFF00B0FF),
                 tertiary = Color(0xFF01579B),
                 background = Color(0xFFF6F6F6),
+                outline = Color(0xFFFF9100)
             )
         }
     val typography = Typography(
