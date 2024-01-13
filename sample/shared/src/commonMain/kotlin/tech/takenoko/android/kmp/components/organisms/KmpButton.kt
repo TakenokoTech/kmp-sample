@@ -10,7 +10,9 @@ internal fun KmpButton(
     onClick: () -> Unit = {},
     modifier: Modifier = Modifier,
 ) {
-    Button(onClick = onClick, modifier = modifier) { Text("Click me!") }
+    Button(onClick = onClick, modifier = modifier) {
+        Text("Click me!")
+    }
 //    OutlinedButton(onClick = onClick) {
 //        Text("Click me!")
 //    }

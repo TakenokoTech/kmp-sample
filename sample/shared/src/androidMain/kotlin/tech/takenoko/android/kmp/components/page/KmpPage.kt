@@ -6,6 +6,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import tech.takenoko.android.kmp.components.template.KmpBottomTemplate
 import tech.takenoko.android.kmp.components.template.KmpTemplate
 import tech.takenoko.android.kmp.theme.KmpTheme
 
@@ -23,6 +24,12 @@ fun KmpPage() {
 
 @Preview
 @Composable
-fun DefaultPreview() {
+fun KmpPagePreview() {
     KmpPage()
+}
+
+@Preview
+@Composable
+fun KmpBottomTemplatePreview() {
+    KmpBottomTemplate()
 }

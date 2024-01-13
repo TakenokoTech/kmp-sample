@@ -19,12 +19,15 @@ import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import tech.takenoko.android.kmp.components.organisms.KmpBottomSheet
 import tech.takenoko.android.kmp.components.organisms.KmpButton
 import tech.takenoko.android.kmp.components.organisms.KmpCard
 import tech.takenoko.android.kmp.components.organisms.KmpHeader
@@ -33,6 +36,8 @@ import tech.takenoko.android.kmp.components.organisms.KmpListItem
 
 @Composable
 internal fun KmpTemplate() {
+    val showBottomSheetState = remember { mutableStateOf(false) }
+
     Column(
         modifier = Modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
@@ -67,7 +72,14 @@ internal fun KmpTemplate() {
             KmpCard(modifier = m, onClick = { }) { cardContent("Share", Outlined.Share) }
         }
         Spacer(modifier = Modifier.height(8.dp))
-        KmpButton(modifier = Modifier.fillMaxWidth())
+        KmpButton(
+            modifier = Modifier.fillMaxWidth(),
+            onClick = { showBottomSheetState.value = true },
+        )
+        KmpBottomSheet(
+            showState = showBottomSheetState,
+            content = { KmpBottomTemplate() },
+        )
     }
 }
 
