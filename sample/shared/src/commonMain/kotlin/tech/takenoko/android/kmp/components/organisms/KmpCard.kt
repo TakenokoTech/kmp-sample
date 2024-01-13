@@ -1,6 +1,5 @@
 package tech.takenoko.android.kmp.components.organisms
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,18 +19,27 @@ internal fun KmpCard(
     modifier: Modifier = KmpCard.cardModifier,
     contentModifier: Modifier = KmpCard.contentModifier,
     elevation: Dp = 0.dp,
-    onClick: () -> Unit = {},
+    onClick: (() -> Unit)? = null,
     content: @Composable ColumnScope.() -> Unit,
 ) {
-    ElevatedCard(
-        modifier = modifier,
-        colors = CardDefaults.elevatedCardColors(containerColor = Color.White),
-        elevation = CardDefaults.cardElevation(defaultElevation = elevation),
-        onClick = onClick,
-    ) {
-        Column(
-            modifier = contentModifier,
-            content = content,
+    val colors = CardDefaults.elevatedCardColors(containerColor = Color.White)
+    val elev = CardDefaults.cardElevation(defaultElevation = elevation)
+    val column = @Composable { Column(modifier = contentModifier, content = content) }
+
+    if (onClick == null) {
+        ElevatedCard(
+            modifier = modifier,
+            colors = colors,
+            elevation = elev,
+            content = { column() },
+        )
+    } else {
+        ElevatedCard(
+            modifier = modifier,
+            colors = colors,
+            elevation = elev,
+            onClick = { onClick.invoke() },
+            content = { column() },
         )
     }
 }

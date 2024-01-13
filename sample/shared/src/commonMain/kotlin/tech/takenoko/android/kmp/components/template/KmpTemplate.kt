@@ -8,10 +8,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.Icons.Outlined
 import androidx.compose.material.icons.outlined.KeyboardArrowRight
 import androidx.compose.material.icons.outlined.Person
+import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material.icons.outlined.Send
 import androidx.compose.material.icons.outlined.Settings
+import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material.icons.outlined.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -41,10 +44,7 @@ internal fun KmpTemplate() {
         ) {
             KmpList(
                 items = (1..3).map {
-                    KmpListItem(
-                        message = "text-$it",
-                        icon = Icons.Outlined.KeyboardArrowRight,
-                    )
+                    KmpListItem(message = "text-$it", icon = Outlined.KeyboardArrowRight)
                 },
             )
         }
@@ -52,32 +52,41 @@ internal fun KmpTemplate() {
         KmpCard(modifier = Modifier.fillMaxWidth()) {
             Text(text = "Material Card.")
         }
+        Spacer(modifier = Modifier.height(8.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            val cardModifier = KmpCard.cardModifier.weight(1.0F)
-            val cardContent = @Composable { text: String, icon: ImageVector ->
-                Column(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalArrangement = Arrangement.spacedBy(4.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Icon(
-                        imageVector = icon,
-                        contentDescription = text,
-                        modifier = Modifier.size(18.dp),
-                    )
-                    Text(
-                        modifier = Modifier,
-                        fontSize = 12.sp,
-                        textAlign = TextAlign.Center,
-                        text = text,
-                    )
-                }
-            }
-            KmpCard(modifier = cardModifier) { cardContent("Cart", Icons.Outlined.ShoppingCart) }
-            KmpCard(modifier = cardModifier) { cardContent("Account", Icons.Outlined.Person) }
-            KmpCard(modifier = cardModifier) { cardContent("Settings", Icons.Outlined.Settings) }
+            val m = KmpCard.cardModifier.weight(1.0F)
+            KmpCard(modifier = m, onClick = { }) { cardContent("Cart", Outlined.ShoppingCart) }
+            KmpCard(modifier = m, onClick = { }) { cardContent("Account", Outlined.Person) }
+            KmpCard(modifier = m, onClick = { }) { cardContent("Settings", Outlined.Settings) }
+        }
+        Spacer(modifier = Modifier.height(2.dp))
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            val m = KmpCard.cardModifier.weight(1.0F)
+            KmpCard(modifier = m, onClick = { }) { cardContent("Search", Outlined.Search) }
+            KmpCard(modifier = m, onClick = { }) { cardContent("Send", Outlined.Send) }
+            KmpCard(modifier = m, onClick = { }) { cardContent("Share", Outlined.Share) }
         }
         Spacer(modifier = Modifier.height(8.dp))
         KmpButton(modifier = Modifier.fillMaxWidth())
+    }
+}
+
+private val cardContent = @Composable { text: String, icon: ImageVector ->
+    Column(
+        modifier = Modifier.fillMaxWidth(),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = text,
+            modifier = Modifier.size(18.dp),
+        )
+        Text(
+            modifier = Modifier,
+            fontSize = 12.sp,
+            textAlign = TextAlign.Center,
+            text = text,
+        )
     }
 }
