@@ -2,12 +2,13 @@ package tech.takenoko.android.kmp.components.page
 
 import androidx.compose.ui.window.ComposeUIViewController
 import tech.takenoko.android.kmp.components.template.KmpTemplate
-import tech.takenoko.android.kmp.interop.KmpLog
+import tech.takenoko.android.kmp.theme.KmpTheme
 
 @Suppress("FunctionName", "unused")
 fun KmpPage() = ComposeUIViewController {
-    KmpLog.debug("KmpPage")
-    KmpTemplate()
+    KmpTheme {
+        KmpTemplate()
+    }
 }
 
 // @Suppress("ktlint:standard:function-naming")
