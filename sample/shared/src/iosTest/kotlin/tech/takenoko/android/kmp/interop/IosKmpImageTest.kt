@@ -48,8 +48,8 @@ class IosKmpImageTest {
 
     @Test
     fun `rgbToGray 4x5`() {
-        val inputArr = (0 until 15).flatMap { listOf<UByte>(255U, 255U, 255U) }
-        val outputArr = (0 until 15).flatMap { listOf<UByte>(255U) }
+        val inputArr = (0 until 20).flatMap { listOf<UByte>(255U, 255U, 255U) }
+        val outputArr = (0 until 20).flatMap { listOf<UByte>(255U) }
         testCaseRgbToGray(
             RgbToGrayParam(inputArr.toUByteArray(), width = 4, height = 5),
             outputArr.toUByteArray(),
